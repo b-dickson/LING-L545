@@ -1,14 +1,11 @@
 import sys
-line =  sys.stdin.readline()
+#simple approach that replaces every full stop followed by space with full stop and newline
+line = sys.stdin.readline()
 while line != '':
-	for token in line.split(' '):
-		if token[-1] in '!?':
-			sys.stdout.write(token + '\n')
-		elif token[-1] == '.':
-			if token in ['etc.','i.e.','e.g.']:
-				sys.stdout.write(token + ' ')
-			else:
-				sys.stdout.write(token + '\n')
+	for i in line.split(' '):
+#if line is split at space, and last char is full stop, then next char must have been space
+		if i[-1] == '.':
+			sys.stdout.write(i + '\n')
 		else:
-			sys.stdout.write(token + ' ')
+			sys.stdout.write(i + ' ')
 	line = sys.stdin.readline()
