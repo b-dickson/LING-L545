@@ -1,0 +1,32 @@
+DELIMITERS = "." ;
+
+LIST DET = DET ;
+LIST PUNCT = PUNCT ;
+LIST VERB = VERB;
+LIST Nom = Case=Nom;;
+LIST X = X;
+LIST PART = PART;
+
+SECTION
+#given rule
+REMOVE DET IF (1C PUNCT) ;
+
+#takes care of DET readings of "всех"
+REMOVE DET IF (1C VERB) ;
+
+#takes care of NOM readings of words after в such as дело
+REMOVE Nom IF (-1C ("<в>"));
+
+#Takes care of the PART and X reading of и
+REMOVE PART IF (-1C VERB) ;
+REMOVE X IF (-1C VERB);
+
+# Not being quite familiar with Russian, these rules are pretty simple and 
+# there most definitely could be counter examples with other data. The PART
+# and X rules I am particularly hesitant about as they are very specific to
+# this data set and I am unsure if the PART and X interpretations of и can
+# occur in other instances when preceded by a verb. I also imagine more
+# specific rules could be written could probably be written with more focus
+# on case agreement. (I had an idea to try to get the GEN agreement for both
+# Семена and Еремеевича but I think this would rely on GEN agreement from 
+# another noun in the sentence which would require further rules narrow down.)
