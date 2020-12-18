@@ -1,0 +1,49 @@
+Multichar_Symbols
+
+%<n%>                ! nom, Noun
+%<pl%>               ! pluriel, Plural
+%>                   ! limite de morphème, Morpheme boundary
+
+LEXICON Root
+
+Nouns ;
+
+LEXICON MPLURAL
+
+%<pl%>:%>s ;
+
+LEXICON FPLURAL
+
+%<pl%>:%>s ;
+
+LEXICON MN
+
+%<n%>: MPLURAL ;
+
+LEXICON FN ;
+
+%<n%>: FPLURAL ;
+
+LEXICON Nouns
+
+étudiant:étudiant MN ;      ! "student " 
+chat:caht MN ;              ! "cat"
+chien:chien MN ;	    ! "dog"
+café:café MN ;              ! "coffee"
+glaçon:glaçon MN ;          ! "ice"
+thé:thé MN ;	            ! "tea"
+père:père MN ;	            ! "father"
+mari:mari MN ;	            ! "husband"
+poisson:poisson MN ;	    ! "fish"
+ordinateur:ordinateur MN ;  ! "computer"
+
+année:année FN ;	    ! "year"
+seconde:seconde FN ;	    ! "second"
+heure:heure FN ;	    ! "hour"
+minute:minute FN ;          ! "minute"
+bière:bière FN ;	    ! "beer"
+mère:mère FN ;              ! "mother"
+épouse:épouse FN ;	    ! "wife"
+fille:fille FN ;	    ! "daughter"
+cuisine:cuisine FN ;        ! "kitchen"
+toilettes:toilettes FN ;    ! "bathroom"
